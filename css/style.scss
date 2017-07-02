@@ -119,7 +119,7 @@
   .menu {
     position: relative;
     width: inherit;
-    height: 100%;
+    height: 500px;
     .menu-head {
       position: absolute;
       top: 0;
@@ -165,7 +165,7 @@
     .menu-body {
       position: absolute;
       top: 80px;
-      height: 80%;
+      height: 405px;
       width: inherit;
       display: none;
       .menu-item {
@@ -188,7 +188,8 @@
   color: $primaryColor;
   background-color: $transparentColor;
   @include mediaQueries(800px) {
-    padding: 20% 15%;
+    padding: 20% 15% 10% 15%;
+    height: auto;
   };
   @include mediaQueries (420px) {
     padding: 30% 8%;
@@ -347,17 +348,142 @@
 
 .contact-head {
   width: 100%;
-  height: 50%;
+  height: 52%;
   @include mediaQueries(800px) {
   };
 }
 .contact-body {
   width: 100%;
-  height: 50%;
-  padding: 0 5% 0 10%;
+  height: 48%;
+  padding: 0 4% 0 4%;
   @include mediaQueries(800px) {
     padding: 0;
   };
+  .contact-container {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    @include mediaQueries(800px) {
+      height: auto;
+    };
+    .contact-content {
+      position: relative;
+      width: 33%;
+      height: 100%;
+      text-align: center;
+      float: left;
+      @include mediaQueries(800px) {
+        width: 100%;
+        height: auto;
+        text-align: left;
+        float: none;
+        padding: 30px 0;
+      };
+      h3 {
+        font-size: 0.9em;
+        letter-spacing: 1px;
+      }
+      &-header {
+        position: relative;
+        top: 60%;
+        visibility: hidden;
+        @include animations(contactContentHead 0.8s 0.6s forwards);
+        @include mediaQueries(800px) {
+          top: 0;
+          margin-bottom: 10px;
+        };
+        h3 {
+          color: $alternateColor;
+          font-weight: 100;
+          @include mediaQueries(800px) {
+            text-transform: uppercase;
+          };
+        }
+      }
+      &-body {
+        position: relative;
+        top: 30%;
+        visibility: hidden;
+        @include animations(contactContentBody 1s 0.4s forwards);
+        @include mediaQueries(800px) {
+          top: 0;
+        };
+        h3 {
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+          @include mediaQueries(800px) {
+            font-weight: bold;
+            font-size: 1.1em;
+          };
+        }
+      }
+    }
+    @include clearfix;
+  }
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding: 5px 0;
+  @include mediaQueries(800px) {
+    padding: 40px 0;
+  };
+  & * {
+    display: inline-block;
+  }
+  .copyright {
+    position: absolute;
+    text-align: left;
+    top: 15px;
+    z-index: 1;
+    font-size: 0.7em;
+    letter-spacing: 0.7px;
+    color: $alternateColor2;
+    span:first-child {
+      font-size: 0.9em;
+    }
+    span:last-child {
+      margin: 0 10px;
+      color: $primaryColor;
+    }
+  }
+  .social-links {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    a {
+      text-decoration: none;
+      color: $primaryColor;
+      padding: 0 10px;
+    }
+  }
+}
+
+.menu-footer {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding: 5px 0;
+  display: none;
+  & * {
+    display: inline-block;
+  }
+  .menu-social-links {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    a {
+      text-decoration: none;
+      color: $secondaryColor;
+      padding: 0 10px;
+    }
+  }
 }
 
 .close-section-btn {
@@ -391,7 +517,7 @@
     background: $secondaryColor;
     border-radius: 50%;
     transition: 1s cubic-bezier(0.68, 4.55, 0.265, 1.55);
-    @include animations(closeSectionBtn 1s 0.2s ease-in-out);
+    @include animations(closeSectionBtn 1s 0.3s);
   }
   &:hover {
     &::before {

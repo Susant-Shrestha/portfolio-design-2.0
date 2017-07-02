@@ -73,7 +73,8 @@ $(document).ready(function(){
     $(".main-view > *").delay(400).animate({"top": "20%","opacity": "0.0"}, 500, function() {
       $(".contact-head > *").css({"display": "block"});
       $(".contact-body *").css({"display": "block"});
-      // $(".project-body a").css({"display": "inline-block"});
+      $(".footer *").css({"display": "inline-block"});
+      // $(".contact-body a").css({"display": "inline-block"});
     });
     $(".main-view").css({
       "transition": "1s ease",
@@ -134,8 +135,10 @@ $(document).ready(function(){
         $(".mobile-menu").css({"background-color": "#000000"});
         $("."+isMenuBtn).css({"color": "#ffffff"});
         $(".menu-btn, .home-menu").hover(function() {$(this).css("color", "#ffffff");isMenuBtn = $(this).attr("class");}, function() {$(this).css("color", "#888888")});
+        $(".mobile-menu").css({"height": $(activePage).outerHeight()+"px"});
+      } else {
+        $(".mobile-menu").css({"height": "100%"});
       }
-      $(".mobile-menu").css({"height": "100%"});
       $(".main-view > *").css("display", "none");
       $(".menu-head .langue-menu").css("display", "none");
       $(".menu-body").css("display", "block");
@@ -153,7 +156,9 @@ $(document).ready(function(){
       });
       $(".mobile-about-menu").css({"left": "100%"}).animate({"left": "-5%"}, 800).animate({"left": "0"});
       $(".mobile-project-menu").css({"right": "100%"}).delay(200).animate({"right": "-5%"}, 800).animate({"right": "0"});
-      $(".mobile-contact-menu").css({"left": "100%"}).delay(400).animate({"left": "-5%"}, 800).animate({"left": "0"});
+      $(".mobile-contact-menu").css({"left": "100%"}).delay(400).animate({"left": "-5%"}, 800).animate({"left": "0"}, function() {
+        $(".menu-footer").css({"display": "block"});
+      });
       menuBtnClicked = true;
     } else {
       $(".mobile-about-menu").animate({"left": "-5%"}, 800).animate({"left": "100%"});
@@ -170,6 +175,7 @@ $(document).ready(function(){
         }
         $(".mobile-menu").css({"height": "80px"});
         $(".main-view > *").css("display", "block");
+        $(".menu-footer").css({"display": "none"});
         $(".menu-body").css("display", "none");
         menuBtnCloseAnimation();
       });
@@ -198,6 +204,7 @@ $(document).ready(function(){
         $(".main-view .logo").css({"top": "40%"});
         $(".main-view .headline").css({"top": "55%"});
         $(".menu-body").css("display", "none");
+        $(".menu-footer").css({"display": "none"});
         menuBtnCloseAnimation();
       });
     } else if (!menuBtnClicked || isActivePage) {
@@ -213,6 +220,7 @@ $(document).ready(function(){
       $(".main-view .logo").css({"top": "40%"});
       $(".main-view .headline").css({"top": "55%"});
       $(".menu-body").css("display", "none");
+      $(".menu-footer").css({"display": "none"});
     }
     $(".menu-btn, .home-menu").hover(function() {$(this).css("color", "#ffffff");isMenuBtn = $(this).attr("class");}, function() {$(this).css("color", "#888888")});
     menuBtnClicked = false;
@@ -231,6 +239,7 @@ $(document).ready(function(){
       $(".menu-body").css({"display": "none"});
       $(".mobile-menu").css({"height": "80px"});
       $(".mobile-menu").css({"background-color": "rgba(256, 256, 256, 0)"});
+      $(".menu-footer").css({"display": "none"});
       menuBtnCloseAnimation();
       isActivePage = true;
       activePage = ".about-page";
@@ -253,6 +262,7 @@ $(document).ready(function(){
       $(".menu-body").css({"display": "none"});
       $(".mobile-menu").css({"height": "80px"});
       $(".mobile-menu").css({"background-color": "rgba(256, 256, 256, 0)"});
+      $(".menu-footer").css({"display": "none"});
       menuBtnCloseAnimation();
       isActivePage = true;
       activePage = ".project-page";
@@ -275,6 +285,7 @@ $(document).ready(function(){
       $(".menu-body").css({"display": "none"});
       $(".mobile-menu").css({"height": "80px"});
       $(".mobile-menu").css({"background-color": "rgba(256, 256, 256, 0)"});
+      $(".menu-footer").css({"display": "none"});
       menuBtnCloseAnimation();
       isActivePage = true;
       activePage = ".contact-page";
@@ -331,6 +342,15 @@ $(document).ready(function(){
       $(".header-caption").css("color", "#000000");
       $(".desktop-menu").css("display", "none");
       $(".music-toggle").css("display", "none");
+      $(".copyright").css({"display": "none"});
+      $(".social-links").css({"display": "inline-block"});
+      if (!menuBtnClicked) {
+        $(".mobile-menu").css({"height": "80px", "display": "block"});
+        $(".menu-body").css("display", "none");
+        $(".menu-footer").css({"display": "none"});
+        $(".menu-head .langue-menu").css("display", "block");
+        $(".home-menu").css("display", "none");
+      }
     } else {
       mobileViewActive = false;
       $(".desktop-menu").css("display", "block");
@@ -339,6 +359,15 @@ $(document).ready(function(){
       $(".header-caption").css("color", "#ffffff");
       $(".desktop-menu").css("display", "block");
       $(".music-toggle").css("display", "block");
+      $(".mobile-menu").css({"height": "80px", "display": "none"});
+      $(".menu-body").css("display", "none");
+      $(".menu-footer").css({"display": "none"});
+      $(".footer *").css({"display": "inline-block"});
+      menuBtnCloseAnimation();
+      if (!isActivePage) {
+        $(".main-view > *").css("display", "block");
+      }
+      menuBtnClicked = false;
     }
     if (mobileViewActive && isActivePage) {
       $(".main-view").css("display", "none");
@@ -347,7 +376,9 @@ $(document).ready(function(){
       $(".menu-head .langue-menu").css("display", "none");
       $(".home-menu").css("display", "block");
       $(".section-head").css({"cursor": "auto"});
-      $(".mobile-menu").css({"background-color": "rgba(256, 256, 256, 0)"});
+      if (!menuBtnClicked) {
+        $(".mobile-menu").css({"background-color": "rgba(256, 256, 256, 0)"});
+      }
       $(".menu-btn, .home-menu").hover(function() {$(this).css("color", "#000000");isMenuBtn = $(this).attr("class");}, function() {$(this).css("color", "#888888")});
     } else if (!mobileViewActive && isActivePage) {
       if (activePage == ".about-page") {

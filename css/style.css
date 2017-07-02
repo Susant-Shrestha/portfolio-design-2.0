@@ -102,6 +102,12 @@ body > * {
 @-webkit-keyframes closeSectionBtn {
   0% {
     visibility: visible;
+    top: 40%;
+    left: 45%;
+    width: 1px;
+    height: 1px; }
+  50% {
+    visibility: visible;
     top: 15%;
     left: 20%;
     width: 26px;
@@ -114,6 +120,12 @@ body > * {
     height: 1px; } }
 @-moz-keyframes closeSectionBtn {
   0% {
+    visibility: visible;
+    top: 40%;
+    left: 45%;
+    width: 1px;
+    height: 1px; }
+  50% {
     visibility: visible;
     top: 15%;
     left: 20%;
@@ -128,6 +140,12 @@ body > * {
 @keyframes closeSectionBtn {
   0% {
     visibility: visible;
+    top: 40%;
+    left: 45%;
+    width: 1px;
+    height: 1px; }
+  50% {
+    visibility: visible;
     top: 15%;
     left: 20%;
     width: 26px;
@@ -138,6 +156,60 @@ body > * {
     left: 45%;
     width: 1px;
     height: 1px; } }
+@-webkit-keyframes contactContentHead {
+  from {
+    visibility: visible;
+    top: 70%;
+    opacity: 0; }
+  to {
+    visibility: visible;
+    top: 60%;
+    opacity: 1; } }
+@-moz-keyframes contactContentHead {
+  from {
+    visibility: visible;
+    top: 70%;
+    opacity: 0; }
+  to {
+    visibility: visible;
+    top: 60%;
+    opacity: 1; } }
+@keyframes contactContentHead {
+  from {
+    visibility: visible;
+    top: 70%;
+    opacity: 0; }
+  to {
+    visibility: visible;
+    top: 60%;
+    opacity: 1; } }
+@-webkit-keyframes contactContentBody {
+  from {
+    visibility: visible;
+    top: 40%;
+    opacity: 0; }
+  to {
+    visibility: visible;
+    top: 30%;
+    opacity: 1; } }
+@-moz-keyframes contactContentBody {
+  from {
+    visibility: visible;
+    top: 40%;
+    opacity: 0; }
+  to {
+    visibility: visible;
+    top: 30%;
+    opacity: 1; } }
+@keyframes contactContentBody {
+  from {
+    visibility: visible;
+    top: 40%;
+    opacity: 0; }
+  to {
+    visibility: visible;
+    top: 30%;
+    opacity: 1; } }
 /*animation end*/
 .main-view {
   background-color: #000000;
@@ -257,7 +329,7 @@ body > * {
   .mobile-menu .menu {
     position: relative;
     width: inherit;
-    height: 100%; }
+    height: 500px; }
     .mobile-menu .menu .menu-head {
       position: absolute;
       top: 0;
@@ -296,7 +368,7 @@ body > * {
     .mobile-menu .menu .menu-body {
       position: absolute;
       top: 80px;
-      height: 80%;
+      height: 405px;
       width: inherit;
       display: none; }
       .mobile-menu .menu .menu-body .menu-item {
@@ -315,7 +387,8 @@ body > * {
   background-color: rgba(255, 255, 255, 0); }
   @media all and (max-width: 800px) {
     .section {
-      padding: 20% 15%; } }
+      padding: 20% 15% 10% 15%;
+      height: auto; } }
   @media all and (max-width: 420px) {
     .section {
       padding: 30% 8%; } }
@@ -474,15 +547,129 @@ body > * {
 
 .contact-head {
   width: 100%;
-  height: 50%; }
+  height: 52%; }
 
 .contact-body {
   width: 100%;
-  height: 50%;
-  padding: 0 5% 0 10%; }
+  height: 48%;
+  padding: 0 4% 0 4%; }
   @media all and (max-width: 800px) {
     .contact-body {
       padding: 0; } }
+  .contact-body .contact-container {
+    position: relative;
+    width: 100%;
+    height: 70%; }
+    @media all and (max-width: 800px) {
+      .contact-body .contact-container {
+        height: auto; } }
+    .contact-body .contact-container .contact-content {
+      position: relative;
+      width: 33%;
+      height: 100%;
+      text-align: center;
+      float: left; }
+      @media all and (max-width: 800px) {
+        .contact-body .contact-container .contact-content {
+          width: 100%;
+          height: auto;
+          text-align: left;
+          float: none;
+          padding: 30px 0; } }
+      .contact-body .contact-container .contact-content h3 {
+        font-size: 0.9em;
+        letter-spacing: 1px; }
+      .contact-body .contact-container .contact-content-header {
+        position: relative;
+        top: 60%;
+        visibility: hidden;
+        -webkit-animation: contactContentHead 0.8s 0.6s forwards;
+        -moz-animation: contactContentHead 0.8s 0.6s forwards;
+        -o-animation: contactContentHead 0.8s 0.6s forwards;
+        animation: contactContentHead 0.8s 0.6s forwards; }
+        @media all and (max-width: 800px) {
+          .contact-body .contact-container .contact-content-header {
+            top: 0;
+            margin-bottom: 10px; } }
+        .contact-body .contact-container .contact-content-header h3 {
+          color: #888888;
+          font-weight: 100; }
+          @media all and (max-width: 800px) {
+            .contact-body .contact-container .contact-content-header h3 {
+              text-transform: uppercase; } }
+      .contact-body .contact-container .contact-content-body {
+        position: relative;
+        top: 30%;
+        visibility: hidden;
+        -webkit-animation: contactContentBody 1s 0.4s forwards;
+        -moz-animation: contactContentBody 1s 0.4s forwards;
+        -o-animation: contactContentBody 1s 0.4s forwards;
+        animation: contactContentBody 1s 0.4s forwards; }
+        @media all and (max-width: 800px) {
+          .contact-body .contact-container .contact-content-body {
+            top: 0; } }
+        .contact-body .contact-container .contact-content-body h3 a {
+          text-decoration: none;
+          color: inherit; }
+        @media all and (max-width: 800px) {
+          .contact-body .contact-container .contact-content-body h3 {
+            font-weight: bold;
+            font-size: 1.1em; } }
+    .contact-body .contact-container::after {
+      content: "";
+      display: table;
+      clear: both; }
+
+.footer {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding: 5px 0; }
+  @media all and (max-width: 800px) {
+    .footer {
+      padding: 40px 0; } }
+  .footer * {
+    display: inline-block; }
+  .footer .copyright {
+    position: absolute;
+    text-align: left;
+    top: 15px;
+    z-index: 1;
+    font-size: 0.7em;
+    letter-spacing: 0.7px;
+    color: #222222; }
+    .footer .copyright span:first-child {
+      font-size: 0.9em; }
+    .footer .copyright span:last-child {
+      margin: 0 10px;
+      color: #000000; }
+  .footer .social-links {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 32px; }
+    .footer .social-links a {
+      text-decoration: none;
+      color: #000000;
+      padding: 0 10px; }
+
+.menu-footer {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding: 5px 0;
+  display: none; }
+  .menu-footer * {
+    display: inline-block; }
+  .menu-footer .menu-social-links {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 32px; }
+    .menu-footer .menu-social-links a {
+      text-decoration: none;
+      color: #ffffff;
+      padding: 0 10px; }
 
 .close-section-btn {
   position: fixed;
@@ -512,10 +699,10 @@ body > * {
     background: #ffffff;
     border-radius: 50%;
     transition: 1s cubic-bezier(0.68, 4.55, 0.265, 1.55);
-    -webkit-animation: closeSectionBtn 1s 0.2s ease-in-out;
-    -moz-animation: closeSectionBtn 1s 0.2s ease-in-out;
-    -o-animation: closeSectionBtn 1s 0.2s ease-in-out;
-    animation: closeSectionBtn 1s 0.2s ease-in-out; }
+    -webkit-animation: closeSectionBtn 1s 0.3s;
+    -moz-animation: closeSectionBtn 1s 0.3s;
+    -o-animation: closeSectionBtn 1s 0.3s;
+    animation: closeSectionBtn 1s 0.3s; }
   .close-section-btn:hover::before {
     visibility: visible;
     top: 25%;

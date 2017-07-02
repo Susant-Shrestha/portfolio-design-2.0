@@ -65,6 +65,13 @@ body > * {
 @include keyFrames("closeSectionBtn") {
   0% {
     visibility: visible;
+    top: 40%;
+    left: 45%;
+    width: 1px;
+    height: 1px;
+  }
+  50% {
+    visibility: visible;
     top: 15%;
     left:20%;
     width: 26px;
@@ -76,6 +83,32 @@ body > * {
     left: 45%;
     width: 1px;
     height: 1px;
+  }
+};
+
+@include keyFrames("contactContentHead") {
+  from {
+    visibility: visible;
+    top: 70%;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    top: 60%;
+    opacity: 1;
+  }
+};
+
+@include keyFrames("contactContentBody") {
+  from {
+    visibility: visible;
+    top: 40%;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    top: 30%;
+    opacity: 1;
   }
 };
 /*animation end*/
