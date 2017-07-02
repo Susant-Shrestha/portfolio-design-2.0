@@ -1,0 +1,526 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: sans-serif;
+  background: #ffffff;
+  overflow: hidden;
+  font-size: 100%; }
+  @media all and (max-width: 800px) {
+    body {
+      overflow-y: auto; } }
+
+body > * {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+/*animation begin*/
+@-webkit-keyframes header {
+  from {
+    visibility: visible;
+    top: 50%;
+    opacity: 0; }
+  to {
+    visibility: visible;
+    top: 40%;
+    opacity: 1; } }
+@-moz-keyframes header {
+  from {
+    visibility: visible;
+    top: 50%;
+    opacity: 0; }
+  to {
+    visibility: visible;
+    top: 40%;
+    opacity: 1; } }
+@keyframes header {
+  from {
+    visibility: visible;
+    top: 50%;
+    opacity: 0; }
+  to {
+    visibility: visible;
+    top: 40%;
+    opacity: 1; } }
+@-webkit-keyframes headerCaption {
+  from {
+    visibility: visible;
+    top: 55%;
+    opacity: 0; }
+  to {
+    visibility: visible;
+    top: 45%;
+    opacity: 1; } }
+@-moz-keyframes headerCaption {
+  from {
+    visibility: visible;
+    top: 55%;
+    opacity: 0; }
+  to {
+    visibility: visible;
+    top: 45%;
+    opacity: 1; } }
+@keyframes headerCaption {
+  from {
+    visibility: visible;
+    top: 55%;
+    opacity: 0; }
+  to {
+    visibility: visible;
+    top: 45%;
+    opacity: 1; } }
+@-webkit-keyframes sectionBody {
+  from {
+    visibility: visible;
+    transform: perspective(500px) rotateY(50deg) rotateX(-2deg) skewY(15deg);
+    transform-origin: left center -50px; }
+  to {
+    visibility: visible;
+    transform: perspective(0px) rotateY(0deg) rotateX(0deg) skewY(0deg);
+    transform-origin: left center 0px; } }
+@-moz-keyframes sectionBody {
+  from {
+    visibility: visible;
+    transform: perspective(500px) rotateY(50deg) rotateX(-2deg) skewY(15deg);
+    transform-origin: left center -50px; }
+  to {
+    visibility: visible;
+    transform: perspective(0px) rotateY(0deg) rotateX(0deg) skewY(0deg);
+    transform-origin: left center 0px; } }
+@keyframes sectionBody {
+  from {
+    visibility: visible;
+    transform: perspective(500px) rotateY(50deg) rotateX(-2deg) skewY(15deg);
+    transform-origin: left center -50px; }
+  to {
+    visibility: visible;
+    transform: perspective(0px) rotateY(0deg) rotateX(0deg) skewY(0deg);
+    transform-origin: left center 0px; } }
+@-webkit-keyframes closeSectionBtn {
+  0% {
+    visibility: visible;
+    top: 15%;
+    left: 20%;
+    width: 26px;
+    height: 26px; }
+  100% {
+    visibility: visible;
+    top: 40%;
+    left: 45%;
+    width: 1px;
+    height: 1px; } }
+@-moz-keyframes closeSectionBtn {
+  0% {
+    visibility: visible;
+    top: 15%;
+    left: 20%;
+    width: 26px;
+    height: 26px; }
+  100% {
+    visibility: visible;
+    top: 40%;
+    left: 45%;
+    width: 1px;
+    height: 1px; } }
+@keyframes closeSectionBtn {
+  0% {
+    visibility: visible;
+    top: 15%;
+    left: 20%;
+    width: 26px;
+    height: 26px; }
+  100% {
+    visibility: visible;
+    top: 40%;
+    left: 45%;
+    width: 1px;
+    height: 1px; } }
+/*animation end*/
+.main-view {
+  background-color: #000000;
+  color: #ffffff;
+  transition: 0.3s ease;
+  transform: perspective(0) rotate(0);
+  transform-origin: right center 0px; }
+
+.logo {
+  position: relative;
+  top: 40%;
+  display: block;
+  width: 185px;
+  height: 100px;
+  margin: auto; }
+  .logo .logo-upper {
+    -webkit-perspective: 200px;
+    /* Chrome, Safari, Opera */
+    -moz-perspective: 200px;
+    /* Mozilla */
+    perspective: 200px; }
+    .logo .logo-upper h1 {
+      font-size: 2.5em;
+      -webkit-transform: rotateY(45deg);
+      -moz-transform: rotateY(45deg);
+      -ms-transform: rotateY(45deg);
+      transform: rotateY(45deg);
+      -webkit-transform-origin: 20% 20%;
+      -moz-transform-origin: 20% 20%;
+      -ms-transform-origin: 20% 20%;
+      transform-origin: 20% 20%; }
+  .logo .logo-lower {
+    -webkit-perspective: 200px;
+    /* Chrome, Safari, Opera */
+    -moz-perspective: 200px;
+    /* Mozilla */
+    perspective: 200px; }
+    .logo .logo-lower h1 {
+      -webkit-transform: rotateY(-45deg);
+      -moz-transform: rotateY(-45deg);
+      -ms-transform: rotateY(-45deg);
+      transform: rotateY(-45deg);
+      -webkit-transform-origin: 20% 20%;
+      -moz-transform-origin: 20% 20%;
+      -ms-transform-origin: 20% 20%;
+      transform-origin: 20% 20%; }
+
+.headline {
+  position: relative;
+  top: 55%;
+  text-align: center;
+  letter-spacing: 1.5px; }
+
+.music-toggle {
+  color: #888888;
+  width: 100%;
+  height: auto;
+  top: 88%;
+  text-align: center;
+  font-size: 0.8em;
+  z-index: 3; }
+  @media all and (max-width: 800px) {
+    .music-toggle {
+      display: none; } }
+  .music-toggle .music-btn {
+    display: inline-block;
+    width: 100px;
+    height: auto; }
+    .music-toggle .music-btn span {
+      padding: 5px;
+      cursor: pointer; }
+      .music-toggle .music-btn span.music-dash {
+        position: relative;
+        top: -5px; }
+    .music-toggle .music-btn:hover {
+      color: #ffffff; }
+
+.desktop-menu {
+  position: inherit;
+  width: inherit;
+  height: inherit; }
+  @media all and (max-width: 800px) {
+    .desktop-menu {
+      display: none; } }
+  .desktop-menu .menu {
+    position: relative;
+    width: 95%;
+    margin: auto; }
+    .desktop-menu .menu .menu-item {
+      position: absolute;
+      display: inline-block;
+      z-index: 3;
+      letter-spacing: 1.5px;
+      font-size: 0.7em;
+      padding: 10px;
+      cursor: pointer;
+      color: #888888; }
+      .desktop-menu .menu .menu-item:hover {
+        color: #ffffff; }
+    .desktop-menu .menu .right-menu {
+      right: 0; }
+  .desktop-menu .top-menu {
+    top: 5%; }
+  .desktop-menu .buttom-menu {
+    top: 90%; }
+
+.mobile-menu {
+  position: inherit;
+  width: inherit;
+  height: 80px;
+  display: none;
+  z-index: 1;
+  color: #ffffff; }
+  @media all and (max-width: 800px) {
+    .mobile-menu {
+      display: block; } }
+  .mobile-menu .menu {
+    position: relative;
+    width: inherit;
+    height: 100%; }
+    .mobile-menu .menu .menu-head {
+      position: absolute;
+      top: 0;
+      height: 80px;
+      width: inherit; }
+      .mobile-menu .menu .menu-head .menu-btn {
+        position: absolute;
+        width: 37px;
+        right: 5%;
+        bottom: 0;
+        padding: 10px 0 10px 10px;
+        font-size: 0.5em;
+        text-align: right;
+        overflow: hidden;
+        cursor: pointer;
+        color: #888888; }
+        .mobile-menu .menu .menu-head .menu-btn span {
+          display: inline-block;
+          position: relative; }
+        .mobile-menu .menu .menu-head .menu-btn:hover {
+          color: #ffffff; }
+      .mobile-menu .menu .menu-head .langue-menu, .mobile-menu .menu .menu-head .home-menu {
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        letter-spacing: 2px;
+        padding: 10px;
+        cursor: pointer;
+        color: #888888; }
+        .mobile-menu .menu .menu-head .langue-menu:hover, .mobile-menu .menu .menu-head .home-menu:hover {
+          color: #ffffff; }
+      .mobile-menu .menu .menu-head .home-menu {
+        display: none;
+        font-size: 2.5em;
+        padding: 0; }
+    .mobile-menu .menu .menu-body {
+      position: absolute;
+      top: 80px;
+      height: 80%;
+      width: inherit;
+      display: none; }
+      .mobile-menu .menu .menu-body .menu-item {
+        position: relative;
+        padding: 40px 0;
+        text-align: center;
+        font-size: 3em;
+        cursor: pointer;
+        color: #888888; }
+        .mobile-menu .menu .menu-body .menu-item:hover {
+          color: #ffffff; }
+
+.section {
+  display: none;
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0); }
+  @media all and (max-width: 800px) {
+    .section {
+      padding: 20% 15%; } }
+  @media all and (max-width: 420px) {
+    .section {
+      padding: 30% 8%; } }
+  .section .section-head:not(.contact-head) {
+    width: 43%;
+    height: 100%; }
+    @media all and (max-width: 1290px) {
+      .section .section-head:not(.contact-head) {
+        width: 44%; } }
+    @media all and (max-width: 1200px) {
+      .section .section-head:not(.contact-head) {
+        width: 45%; } }
+    @media all and (max-width: 1110px) {
+      .section .section-head:not(.contact-head) {
+        width: 46%; } }
+    @media all and (max-width: 1030px) {
+      .section .section-head:not(.contact-head) {
+        width: 47%; } }
+    @media all and (max-width: 940px) {
+      .section .section-head:not(.contact-head) {
+        width: 48%; } }
+    @media all and (max-width: 880px) {
+      .section .section-head:not(.contact-head) {
+        width: 49%; } }
+    @media all and (max-width: 800px) {
+      .section .section-head:not(.contact-head) {
+        width: 100%;
+        height: auto;
+        color: #000000;
+        text-align: left; } }
+  .section .section-head {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    color: #ffffff; }
+    .section .section-head .header {
+      position: relative;
+      top: 40%;
+      font-size: 3em;
+      visibility: hidden;
+      -webkit-animation: header 0.8s 0.2s forwards;
+      -moz-animation: header 0.8s 0.2s forwards;
+      -o-animation: header 0.8s 0.2s forwards;
+      animation: header 0.8s 0.2s forwards; }
+    .section .section-head .header-caption {
+      position: relative;
+      top: 45%;
+      font-size: 0.8em;
+      letter-spacing: 4px;
+      visibility: hidden;
+      -webkit-animation: headerCaption 0.6s 0.4s forwards;
+      -moz-animation: headerCaption 0.6s 0.4s forwards;
+      -o-animation: headerCaption 0.6s 0.4s forwards;
+      animation: headerCaption 0.6s 0.4s forwards; }
+    @media all and (max-width: 800px) {
+      .section .section-head {
+        width: 100%;
+        height: auto;
+        color: #000000;
+        text-align: left; } }
+  .section .section-body:not(.contact-body) {
+    position: relative;
+    width: 50%;
+    height: inherit; }
+    @media all and (max-width: 800px) {
+      .section .section-body:not(.contact-body) {
+        width: 100%;
+        height: auto; } }
+  .section::after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.about-head {
+  float: right; }
+  @media all and (max-width: 800px) {
+    .about-head {
+      float: none; } }
+
+.about-body {
+  padding: 0 5% 0 10%;
+  float: left; }
+  @media all and (max-width: 800px) {
+    .about-body {
+      float: none;
+      padding: 0; } }
+  .about-body .about-article {
+    position: relative;
+    top: 16%;
+    line-height: 2;
+    font-size: 1.02em;
+    word-spacing: 1px;
+    color: #222222;
+    -webkit-animation: sectionBody 1.3s;
+    -moz-animation: sectionBody 1.3s;
+    -o-animation: sectionBody 1.3s;
+    animation: sectionBody 1.3s; }
+    @media all and (max-width: 1050px) {
+      .about-body .about-article {
+        font-size: 0.9em; } }
+  .about-body .about-client {
+    position: relative;
+    top: 20%; }
+    .about-body .about-client .about-client-head {
+      padding: 25px 0;
+      letter-spacing: 2px;
+      visibility: hidden;
+      -webkit-animation: sectionBody 1.3s 0.2s forwards;
+      -moz-animation: sectionBody 1.3s 0.2s forwards;
+      -o-animation: sectionBody 1.3s 0.2s forwards;
+      animation: sectionBody 1.3s 0.2s forwards; }
+      .about-body .about-client .about-client-head h2 {
+        font-weight: lighter; }
+    .about-body .about-client .about-client-body a {
+      display: inline-block;
+      text-decoration: none;
+      color: #222222;
+      font-size: 0.8em;
+      letter-spacing: 1px; }
+      @media all and (max-width: 1050px) {
+        .about-body .about-client .about-client-body a {
+          font-size: 0.7em; } }
+      .about-body .about-client .about-client-body a:hover {
+        text-decoration: underline; }
+    .about-body .about-client .about-client-body .clientlist1, .about-body .about-client .about-client-body .clientlist2 {
+      width: 36%;
+      float: left;
+      line-height: 2.5; }
+    .about-body .about-client .about-client-body .clientlist1 {
+      margin-right: 10%;
+      visibility: hidden;
+      -webkit-animation: sectionBody 1.3s 0.4s forwards;
+      -moz-animation: sectionBody 1.3s 0.4s forwards;
+      -o-animation: sectionBody 1.3s 0.4s forwards;
+      animation: sectionBody 1.3s 0.4s forwards; }
+    .about-body .about-client .about-client-body .clientlist2 {
+      visibility: hidden;
+      -webkit-animation: sectionBody 1.3s 0.6s forwards;
+      -moz-animation: sectionBody 1.3s 0.6s forwards;
+      -o-animation: sectionBody 1.3s 0.6s forwards;
+      animation: sectionBody 1.3s 0.6s forwards; }
+
+.project-head {
+  float: left; }
+  @media all and (max-width: 800px) {
+    .project-head {
+      float: none; } }
+
+.project-body {
+  padding: 0 5% 0 10%;
+  float: right; }
+  @media all and (max-width: 800px) {
+    .project-body {
+      float: none;
+      padding: 0; } }
+
+.contact-head {
+  width: 100%;
+  height: 50%; }
+
+.contact-body {
+  width: 100%;
+  height: 50%;
+  padding: 0 5% 0 10%; }
+  @media all and (max-width: 800px) {
+    .contact-body {
+      padding: 0; } }
+
+.close-section-btn {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  display: none;
+  cursor: pointer; }
+  @media all and (max-width: 800px) {
+    .close-section-btn {
+      visibility: hidden; } }
+  .close-section-btn span {
+    display: block;
+    color: #222222; }
+    .close-section-btn span:first-child {
+      transform: matrix3d(0.71, -0.71, 0, 0, 0.71, 0.71, 0, 0, 0, 0, 1, 0, -5, 5, 0, 1); }
+    .close-section-btn span:last-child {
+      transform: matrix3d(0.71, 0.71, 0, 0, -0.71, 0.71, 0, 0, 0, 0, 1, 0, 5, -10, 0, 1); }
+  .close-section-btn::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    width: 11px;
+    height: 11px;
+    z-index: 1;
+    visibility: hidden;
+    background: #ffffff;
+    border-radius: 50%;
+    transition: 1s cubic-bezier(0.68, 4.55, 0.265, 1.55);
+    -webkit-animation: closeSectionBtn 1s 0.2s ease-in-out;
+    -moz-animation: closeSectionBtn 1s 0.2s ease-in-out;
+    -o-animation: closeSectionBtn 1s 0.2s ease-in-out;
+    animation: closeSectionBtn 1s 0.2s ease-in-out; }
+  .close-section-btn:hover::before {
+    visibility: visible;
+    top: 25%;
+    left: 30%;
+    width: 16px;
+    height: 16px; }
+
+/*# sourceMappingURL=style.css.map */

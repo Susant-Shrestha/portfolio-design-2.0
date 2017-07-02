@@ -1,0 +1,58 @@
+@import "variables";
+
+@mixin clearfix {
+  &::after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin perspective($px) {
+  -webkit-perspective: $px; /* Chrome, Safari, Opera */
+  -moz-perspective: $px; /* Mozilla */
+  perspective: $px;
+}
+
+@mixin transformRotateY($deg) {
+  -webkit-transform: rotateY($deg);
+  -moz-transform: rotateY($deg);
+  -ms-transform: rotateY($deg);
+  transform: rotateY($deg);
+}
+
+@mixin transformOrigin($xaxis, $yaxis) {
+  -webkit-transform-origin: $xaxis $yaxis;
+  -moz-transform-origin: $xaxis $yaxis;
+  -ms-transform-origin: $xaxis $yaxis;
+  transform-origin: $xaxis $yaxis;
+}
+
+@mixin trasformTranslateX($px) {
+  transform: translateX($px);
+}
+
+@mixin animations($arguments) {
+  -webkit-animation: $arguments;
+  -moz-animation: $arguments;
+  -o-animation: $arguments;
+  animation: $arguments;
+}
+
+@mixin keyFrames($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin mediaQueries($maxWidth) {
+  @media all and (max-width: $maxWidth){
+    @content;
+  }
+}

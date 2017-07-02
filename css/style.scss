@@ -1,0 +1,405 @@
+@import "mixins";
+@import "variables";
+@import "initials";
+
+.main-view {
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  transition: 0.3s ease;
+  transform: perspective(0) rotate(0);
+  transform-origin: right center 0px;
+}
+
+.logo {
+  position: relative;
+  top: 40%;
+  display: block;
+  width: 185px;
+  height: 100px;
+  margin: auto;
+  .logo-upper {
+    @include perspective(200px);
+    h1 {
+      font-size: 2.5em;
+      @include transformRotateY(45deg);
+      @include transformOrigin(20%,20%);
+    }
+  }
+  .logo-lower {
+    @include perspective(200px);
+    h1 {
+      @include transformRotateY(-45deg);
+      @include transformOrigin(20%,20%);
+    }
+  }
+}
+
+.headline {
+  position: relative;
+  top: 55%;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+
+.music-toggle {
+  color: $alternateColor;
+  width: 100%;
+  height: auto;
+  top: 88%;
+  text-align: center;
+  font-size: 0.8em;
+  z-index: 3;
+  @include mediaQueries(800px) {
+    display: none;
+  };
+  .music-btn {
+    display: inline-block;
+    width: 100px;
+    height: auto;
+    span {
+      padding: 5px;
+      cursor: pointer;
+      &.music-dash {
+        position: relative;
+        top: -5px;
+      }
+    }
+    &:hover {
+      color: $secondaryColor;
+    }
+  }
+}
+
+.desktop-menu {
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  @include mediaQueries(800px) {
+    display: none;
+  };
+  .menu {
+    position: relative;
+    width: 95%;
+    margin: auto;
+    .menu-item {
+      position: absolute;
+      display: inline-block;
+      z-index: 3;
+      letter-spacing: 1.5px;
+      font-size: 0.7em;
+      padding: 10px;
+      cursor: pointer;
+      color: $alternateColor;
+      &:hover {
+        color: $secondaryColor;
+      }
+    }
+    .right-menu {
+      right: 0;
+    }
+  }
+  .top-menu {
+    top: 5%;
+  }
+  .buttom-menu {
+    top: 90%;
+  }
+}
+
+.mobile-menu {
+  position: inherit;
+  width: inherit;
+  height: 80px;
+  display: none;
+  z-index: 1;
+  color: $secondaryColor;
+  @include mediaQueries(800px) {
+    display: block;
+  };
+  .menu {
+    position: relative;
+    width: inherit;
+    height: 100%;
+    .menu-head {
+      position: absolute;
+      top: 0;
+      height: 80px;
+      width: inherit;
+      .menu-btn {
+        position: absolute;
+        width: 37px;
+        right: 5%;
+        bottom: 0;
+        padding: 10px 0 10px 10px;
+        font-size: 0.5em;
+        text-align: right;
+        overflow: hidden;
+        cursor: pointer;
+        color: $alternateColor;
+        span {
+          display: inline-block;
+          position: relative;
+        }
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
+      .langue-menu, .home-menu {
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        letter-spacing: 2px;
+        padding: 10px;
+        cursor: pointer;
+        color: $alternateColor;
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
+      .home-menu {
+        display: none;
+        font-size: 2.5em;
+        padding: 0;
+      }
+    }
+    .menu-body {
+      position: absolute;
+      top: 80px;
+      height: 80%;
+      width: inherit;
+      display: none;
+      .menu-item {
+        position: relative;
+        padding: 40px 0;
+        text-align: center;
+        font-size: 3em;
+        cursor: pointer;
+        color: $alternateColor;
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
+}
+
+.section {
+  display: none;
+  color: $primaryColor;
+  background-color: $transparentColor;
+  @include mediaQueries(800px) {
+    padding: 20% 15%;
+  };
+  @include mediaQueries (420px) {
+    padding: 30% 8%;
+  };
+  .section-head:not(.contact-head) {
+    width: 43%;
+    height: 100%;
+    @include mediaQueries(1290px) {
+      width: 44%;
+    };
+    @include mediaQueries(1200px) {
+      width: 45%;
+    };
+    @include mediaQueries(1110px) {
+      width: 46%;
+    };
+    @include mediaQueries(1030px) {
+      width: 47%;
+    };
+    @include mediaQueries(940px) {
+      width: 48%;
+    };
+    @include mediaQueries(880px) {
+      width: 49%;
+    };
+    @include mediaQueries(800px) {
+      width: 100%;
+      height: auto;
+      color: $primaryColor;
+      text-align: left;
+    };
+  };
+  .section-head {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    color: $secondaryColor;
+    .header {
+      position: relative;
+      top: 40%;
+      font-size: 3em;
+      visibility: hidden;
+      @include animations(header 0.8s 0.2s forwards);
+    }
+    .header-caption {
+      position: relative;
+      top: 45%;
+      font-size: 0.8em;
+      letter-spacing: 4px;
+      visibility: hidden;
+      @include animations(headerCaption 0.6s 0.4s forwards);
+    }
+    @include mediaQueries(800px) {
+      width: 100%;
+      height: auto;
+      color: $primaryColor;
+      text-align: left;
+    };
+  }
+  .section-body:not(.contact-body) {
+    position: relative;
+    width: 50%;
+    height: inherit;
+    @include mediaQueries(800px) {
+      width: 100%;
+      height: auto;
+    };
+  }
+  @include clearfix;
+}
+
+.about-head {
+  float: right;
+  @include mediaQueries(800px) {
+    float: none;
+  };
+}
+.about-body {
+  padding: 0 5% 0 10%;
+  float: left;
+  @include mediaQueries(800px) {
+    float: none;
+    padding: 0;
+  };
+  .about-article {
+    position: relative;
+    top: 16%;
+    line-height: 2;
+    font-size: 1.02em;
+    @include mediaQueries(1050px){
+      font-size: 0.9em;
+    };
+    word-spacing: 1px;
+    color: $alternateColor2;
+    @include animations(sectionBody 1.3s);
+  }
+  .about-client
+  {
+    position: relative;
+    top: 20%;
+    .about-client-head {
+      padding: 25px 0;
+      letter-spacing: 2px;
+      visibility: hidden;
+      @include animations(sectionBody 1.3s 0.2s forwards);
+      h2 {
+        font-weight: lighter;
+      }
+    }
+    .about-client-body {
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: $alternateColor2;
+        font-size: 0.8em;
+        @include mediaQueries(1050px) {
+          font-size: 0.7em;
+        };
+        letter-spacing: 1px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .clientlist1, .clientlist2 {
+        width: 36%;
+        float: left;
+        line-height: 2.5;
+      }
+      .clientlist1 {
+        margin-right: 10%;
+        visibility: hidden;
+        @include animations(sectionBody 1.3s 0.4s forwards);
+      }
+      .clientlist2 {
+        visibility: hidden;
+        @include animations(sectionBody 1.3s 0.6s forwards);
+      }
+    }
+  }
+}
+
+.project-head {
+  float: left;
+  @include mediaQueries(800px) {
+    float: none;
+  };
+}
+.project-body {
+  padding: 0 5% 0 10%;
+  float: right;
+  @include mediaQueries(800px) {
+    float: none;
+    padding: 0;
+  };
+}
+
+.contact-head {
+  width: 100%;
+  height: 50%;
+  @include mediaQueries(800px) {
+  };
+}
+.contact-body {
+  width: 100%;
+  height: 50%;
+  padding: 0 5% 0 10%;
+  @include mediaQueries(800px) {
+    padding: 0;
+  };
+}
+
+.close-section-btn {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  display: none;
+  cursor: pointer;
+  @include mediaQueries(800px) {
+    visibility: hidden;
+  };
+  span {
+    display: block;
+    color: $alternateColor2;
+    &:first-child {
+      transform: matrix3d(0.71,-0.71,0.00,0,0.71,0.71,0.00,0,0,0,1,0,-5,5,0,1);
+    }
+    &:last-child {
+      transform: matrix3d(0.71,0.71,0.00,0,-0.71,0.71,0.00,0,0,0,1,0,5,-10,0,1);
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    width: 11px;
+    height: 11px;
+    z-index: 1;
+    visibility: hidden;
+    background: $secondaryColor;
+    border-radius: 50%;
+    transition: 1s cubic-bezier(0.68, 4.55, 0.265, 1.55);
+    @include animations(closeSectionBtn 1s 0.2s ease-in-out);
+  }
+  &:hover {
+    &::before {
+      visibility: visible;
+      top: 25%;
+      left:30%;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
